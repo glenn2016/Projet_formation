@@ -9,6 +9,7 @@
 </div>
 
 <img style="height:20rem;" src="{{asset('image/Capture2.png')}}" class="card-img-bottom" alt="...">
+
 <div class="card-body">
 
     @foreach ($formations as $formation)

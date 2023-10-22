@@ -105,6 +105,9 @@ class EtudiantController extends Controller
     public function destroy($id)
     {
         //
+        $element = Candidat::findOrFail($id);
+        $element->delete();
+        return redirect()->back()->with('success', 'Candidats supprimé avec succès');
     }
 
     public function repartitionParSexe()
@@ -126,4 +129,16 @@ class EtudiantController extends Controller
 
         return view('trancheage', compact('labels', 'values'));
     }
+
+    public function gestion (){
+
+        return view ('gestion');
+    }
+
+
+    public function all_candidats (){
+        return view ('all_candidats',['candidats'=>Candidat::all()]);
+    }
+
+
 }

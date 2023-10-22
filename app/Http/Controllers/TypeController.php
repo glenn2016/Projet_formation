@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Type;
+use App\Models\Referentiel;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller
@@ -36,6 +37,11 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         return view('welcome', ['types' => Type::all()]);
+    }
+
+    public function ajout_referentiel(Request $request)
+    {
+        return view('ajout_referentiel', ['types' => Type::all()]);
     }
 
     /**
@@ -82,4 +88,26 @@ class TypeController extends Controller
     {
         //
     }
+
+    public function stores(Request $request)
+    {
+        $request->validate([
+            'libelleReferentiel' => 'required',
+            'horaire' => 'required',
+            'validated' => 'required',
+            'type_id' => 'required',
+        ]);
+
+        $referentiel = new referentiel();
+
+        $referentiel->libelleReferentiel = $request->input('libelleReferentiel');
+        $referentiel->horaire = $request->input('horaire');
+        $referentiel->validated = $request->input('validated');
+        $referentiel->type_id = $request->input('type_id');
+
+        $referentiel->save();
+
+        return back()->with('flash_message', 'Candidat enregistré');
+    }
+
 }

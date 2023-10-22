@@ -14,4 +14,6 @@ class Type extends Model
     {
         return $this->hasMany(Referentiel::class);
     }
+
+    protected $table = 'types';
 }

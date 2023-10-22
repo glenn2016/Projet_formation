@@ -11,6 +11,13 @@ class Referentiel extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'libelleReferentiel',
+        'validated',
+        'horaire',
+        'type_id ',
+    ];
+
     public function type(){
         return $this->belongsTo(Type::class);
     }
@@ -24,4 +31,6 @@ class Referentiel extends Model
     {
         return $this->formations()->count();
     }
+
+    protected $table = 'referentiels';
 }

@@ -105,4 +105,5 @@ class FormationController extends Controller
 
         return view('statistformation', compact('formations_en_cours', 'formations_en_attente'));
     }
+
 }

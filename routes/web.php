@@ -30,6 +30,18 @@ Route::get('/dashboard', [FormationController::class, 'canByfor']);
 Route::get('/Formation_Par_Referentiel',[ReferencielController::class, 'forByRef']);
 Route::get('/candidats_par_sexe',[EtudiantController::class,'repartitionParSexe']);
 Route::get('/Tranche_age', [EtudiantController::class, 'trancheAge']);
+Route::get('/gestion', [EtudiantController::class, 'gestion']);
+Route::post('/ajout_referentielle', [TypeController::class,'stores']);
+Route::get('/ajout_referentiel', [TypeController::class, 'ajout_referentiel']);
+Route::post('/ajout_formations', [ReferencielController::class,'stores']);
+Route::get('/ajout_formation', [ReferencielController::class, 'ajout_formation']);
+
+
+
+Route::get('/all_candidats', [EtudiantController::class, 'all_candidats']);
+
+Route::delete('/delete_candidats/{id}','App\Http\Controllers\EtudiantController@destroy')->name('delete_candidats');
+
 
 Route::get('/fortype', [FormationController::class, 'ForByType']);
 

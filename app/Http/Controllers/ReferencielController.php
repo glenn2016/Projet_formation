@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Referentiel;
 use Illuminate\Http\Request;
+use App\Models\Formation;
 
 class ReferencielController extends Controller
 {
@@ -87,5 +88,37 @@ class ReferencielController extends Controller
     {
         return view('nbfore', ['referentiels' => Referentiel::withCount('formations')->get()]);
 
+    }
+
+    
+    public function ajout_formation ()
+    {
+        return view ('ajout_formation', ['referentiels' => Referentiel::all()]);
+    }
+
+    public function stores(Request $request)
+    {
+        $request->validate([
+            'nomFormation' => 'required',
+            'duree' => 'required',
+            'description' => 'required',
+            'isStarted' => 'required',
+            'date_debut' => 'required',
+            'referentiel_id' => 'required',
+            
+        ]);
+
+        $formation = new formation();
+
+        $formation->nomFormation = $request->input('nomFormation');
+        $formation->duree = $request->input('duree');
+        $formation->description = $request->input('description');
+        $formation->isStarted = $request->input('isStarted');
+        $formation->date_debut = $request->input('date_debut');
+        $formation->referentiel_id  = $request->input('referentiel_id');
+
+        $formation->save();
+
+        return back()->with('flash_message', 'Candidat enregistré');
     }
 }

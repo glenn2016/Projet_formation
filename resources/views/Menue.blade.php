@@ -24,6 +24,8 @@
                 <li><a href="{{asset('/Formation_Par_Referentiel')}}" style="text-decoration:none;"><i
                             class="fas fa-address-card"></i>Nombre de Formation par referentiel</a>
                 </li>
+                <li><a href="http://127.0.0.1:8000/gestion" style="text-decoration:none;"><i
+                            class="fas fa-project-diagram"></i>Gestion</a></li>
                 <li><a href="/candidats_par_sexe" style="text-decoration:none;"><i
                             class="fas fa-project-diagram"></i>Repartition par
                         Sexe</a></li>

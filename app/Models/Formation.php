@@ -10,6 +10,16 @@ class Formation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nomFormation',
+        'duree',
+        'description',
+        'isStarted',
+        'date_debut',
+        'referentiel_id  ',
+    ];
+
+
     public function referentiel(){
         return $this->belongsTo(Referentiel::class);
     }
@@ -23,4 +33,6 @@ class Formation extends Model
     {
         return $this->candidats()->count();
     }
+
+    protected $table = 'formations';
 }
