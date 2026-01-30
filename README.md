@@ -1,66 +1,190 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 Projet Laravel – Gestion des Formations et Candidats
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📚 Contexte
 
-## About Laravel
+Ce projet a été réalisé en **2023** dans le cadre d’un **projet académique Laravel**, avec pour objectif principal de **renforcer la maîtrise d’Eloquent ORM** et des **requêtes complexes** sur une base de données relationnelle.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+L’application permet de gérer des **formations**, des **référentiels**, des **types de domaines**, ainsi que les **candidats inscrits**, avec plusieurs statistiques représentées sous forme de **graphes**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🧩 Entités principales
 
-## Learning Laravel
+### 🔹 TYPE
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Représente la **catégorie générale** d’une formation.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Exemples :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Informatique
+* Gestion
+* Santé
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 🔹 REFERENTIEL
 
-### Premium Partners
+Sous-ensemble d’un **Type**.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Exemples :
 
-## Contributing
+* Développement Web
+* Réseaux Informatiques
+* Gestion de projet
+* Comptabilité
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+### 🔹 FORMATION
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Niveau le plus concret.
 
-## Security Vulnerabilities
+Elle répond à la question : **quelle formation exactement ?**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Exemples :
 
-## License
+* Formation PHP
+* Formation JavaScript
+* Administration Réseau
+* Comptabilité Générale
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### 🔹 CANDIDAT
+
+Représente une personne inscrite à une formation.
+
+Champs principaux :
+
+* Nom
+* Prénom
+* Email
+* Sexe
+* Âge
+* Niveau d’étude
+* Formation (clé étrangère : `id_formation`)
+
+---
+
+## ⚙️ Fonctionnalités
+
+* ➕ Ajout de Type
+* ➕ Ajout de Référentiel
+* ➕ Ajout de Formation
+* ➕ Ajout de Candidat
+* 📌 Inscription d’un candidat à une formation
+
+### 📊 Statistiques & Requêtes avancées
+
+* Nombre de candidats par formation
+* Nombre de formations par référentiel
+* Nombre de candidats par sexe (toutes formations confondues)
+* Statistiques par tranche d’âge (toutes formations confondues)
+* Statistiques des formations **en cours** et **en attente**
+
+📈 Toutes les statistiques sont **représentées sous forme de graphes**.
+
+---
+
+## 🛠️ Technologies utilisées
+
+* **Laravel**
+* **PHP**
+* **MySQL**
+* **Eloquent ORM**
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+* **Bootstrap**
+* **Chart.js / Librairie de graphiques**
+
+---
+
+## 🖼️ Captures d’écran
+
+Les captures d’écran du projet se trouvent dans le dossier suivant :
+
+```
+/screenshots
+```
+
+Nommage des images :
+
+* 01.png
+* 02.png
+* puis de 1.png jusqu’à 11.png
+
+Aperçu :
+
+* 01 / 02 : Structure générale et navigation
+* 1 → 4 : Gestion des Types et Référentiels
+* 5 → 7 : Gestion des Formations
+* 8 → 9 : Gestion des Candidats
+* 10 → 11 : Statistiques et graphiques
+
+---
+
+## 🚀 Installation et lancement
+
+1. Cloner le projet
+
+```bash
+git clone <url-du-projet>
+```
+
+2. Installer les dépendances
+
+```bash
+composer install
+npm install && npm run dev
+```
+
+3. Créer le fichier d’environnement
+
+```bash
+cp .env.example .env
+```
+
+4. Générer la clé de l’application
+
+```bash
+php artisan key:generate
+```
+
+5. Configurer la base de données MySQL dans `.env`
+
+6. Lancer les migrations
+
+```bash
+php artisan migrate
+```
+
+7. Démarrer le serveur
+
+```bash
+php artisan serve
+```
+
+---
+
+## 📌 Apports du projet
+
+Ce projet m’a permis de :
+
+* Mieux comprendre les **relations Eloquent** (OneToMany, ManyToOne)
+* Écrire des **requêtes complexes** avec Eloquent
+* Exploiter les données pour produire des **statistiques pertinentes**
+* Structurer un projet Laravel de manière propre
+
+---
+
+## 👨‍🎓 Auteur
+
+Projet réalisé par **Glenn Leonard**
+Projet académique – Laravel & MySQL
+Année : **2023**
+
+---
+
+✅ Projet pédagogique axé sur la pratique avancée d’Eloquent ORM.
+ 
