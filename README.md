@@ -108,11 +108,26 @@ Les captures d’écran du projet se trouvent dans le dossier suivant :
 /screenshots
 ```
 
-Nommage des images :
+## 🖼️ Captures d’écran
 
-* 01.png
-* 02.png
-* puis de 1.png jusqu’à 11.png
+![Image 01](screenshots/01.png)
+![Image 02](screenshots/02.png)
+
+![Image 1](screenshots/1.png)
+![Image 2](screenshots/2.png)
+![Image 3](screenshots/3.png)
+![Image 4](screenshots/4.png)
+
+![Image 5](screenshots/5.png)
+![Image 6](screenshots/6.png)
+![Image 7](screenshots/7.png)
+
+![Image 8](screenshots/8.png)
+![Image 9](screenshots/9.png)
+
+![Image 10](screenshots/10.png)
+![Image 11](screenshots/11.png)
+
 
 Aperçu :
 
